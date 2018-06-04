@@ -1,0 +1,13 @@
+.user-details('*ngIf'="showUser && user != undefined" id='user-{{userId}}')
+	.name 
+		i.fa.fa-user.mr-2
+		| {{user.details.name}} {{user.details.lastname}} ({{ ageToStr(user.details.age) }})
+		
+	.city 
+		i.fa.fa-building.mr-2
+		| {{user.details.city}}
+
+	.about-text.mt-3
+		| {{user.details.abouttext}}
+
+	.btn.btn-primary.mt-3('(click)'="sendMessageClick.emit(userId)") Отправить сообщение

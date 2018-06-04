@@ -1,0 +1,13 @@
+/**
+ * Global Application Styles
+ */
+ // @import '~bootstrap/dist/css/bootstrap.min.css';
+// @import "~bootstrap/scss/bootstrap";
+// @import "~font-awesome/css/font-awesome.css";
+@import "constants";
+
+body {
+	margin-top: 80px;
+	font-family: $primary-font;
+	font-size: $primary-font-size;
+}

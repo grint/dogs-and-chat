@@ -1,0 +1,26 @@
+.messenger
+	h4 Мессенджер
+
+	.row.mt-4
+		.users('[ngClass]'="{'col-12 col-md-12': !showUserInfo && !showMessages, 'col-12 col-md-4': showUserInfo && !showMessages, 'col-12 col-md-2': !showUserInfo && showMessages}")
+			users('(loadUserClick)'="loadUser($event)" '[showMessages]'="showMessages" '[showUserInfo]'="showUserInfo" '[userId]'="currentUserId")
+
+		.user.col-12.col-md-8('*ngIf'="showUserInfo")
+			.card
+				.card-body
+					user('[showUser]'="showUserInfo" '[userId]'="sendUserId" '(sendMessageClick)'="getMessages($event)")
+
+		.messages.col-12.col-md-10('*ngIf'="showMessages")
+			.card
+				.card-body
+					ul.list-group.messages-list
+						li.list-group-item.message('*ngFor'="let message of messages" '[ngClass]'="(message.userId == currentUserId) ? 'user-message': 'my-message'")
+							span.username {{ message.username }} - 
+							span.date {{ message.date | date: 'dd.MM.yyyy HH:mm:ss'}}
+							span.text.d-block {{message.text}}
+
+					.form.mt-3
+						.form-group
+							textarea.form-control('[(ngModel)]'="newMessage" rows="4" name="textarea")
+							.btn.btn-primary.pull-right.mt-2('(click)'="saveMessage(newMessage)") Отправить
+

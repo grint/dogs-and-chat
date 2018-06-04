@@ -1,0 +1,23 @@
+.date {
+	color: #aaa;
+	font-size: 85%;
+	margin-bottom: 1em;
+}
+
+.username {
+	color: #aaa;
+	font-size: 85%;
+	margin-bottom: 1em;
+}
+
+.message {
+	width: 90%;
+
+	&.my-message {
+		align-self: flex-end;
+	}
+
+	&.user-message {
+		align-self: flex-start;
+	}
+}

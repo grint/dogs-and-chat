@@ -1,0 +1,15 @@
+nav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top
+	.container
+		button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbar', aria-controls='navbar', aria-expanded='false', aria-label='Toggle navigation')
+			span.navbar-toggler-icon
+		
+		a.navbar-brand(routerLink='/') WebTouch
+		
+		#navbar.collapse.navbar-collapse
+			ul.navbar-nav.mr-auto
+				li.nav-item(routerLinkActive="active")
+					a.nav-link(routerLink='dogs') Породы
+				li.nav-item(routerLinkActive="active")
+					a.nav-link(routerLink='messenger') Мессенджер
+				//- li.nav-item(routerLinkActive="active")
+				//- 	a.nav-link(routerLink='docs') Документация

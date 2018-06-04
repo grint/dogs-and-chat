@@ -1,0 +1,12 @@
+.open>.dropdown-menu {
+    display: block;
+}
+
+.ui-select-toggle {
+	display: inline-block;
+
+	&:hover, &:focus, &:active {
+		background: #fff !important;
+		color: #495057 !important;
+	}
+}

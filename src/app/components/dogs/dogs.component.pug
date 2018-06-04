@@ -1,0 +1,11 @@
+.dogs.row
+	.col-12.col-lg-10.offset-lg-1
+		.card('*ngIf'="!isLoading")
+			.card-body
+				h4 {{pageTitle}}
+
+				ng-select('[allowClear]'="true" '[items]'="breeds" '(selected)'="selected($event)"  notFoundText='Такая порода не найдена' placeholder="Выберите породу собаки")
+
+				.text-center.mt-3
+					img.img-fluid.rounded.w-100(src="{{randomImage}}" '*ngIf'="status == 'success'")
+					.alert.alert-danger('*ngIf'="status && status != 'success'") Упс :( Такая порода не найдена.
